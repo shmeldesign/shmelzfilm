@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Filmmaker Portfolio</title>
+  <link rel="preconnect" href="https://api.fontshare.com" />
+  <link href="https://api.fontshare.com/v2/css?f[]=switzer@400,500,600,700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ===== HEADER ===== -->
+  <header class="site-header">
+    <button class="logo" id="home-logo" type="button">SHMELZFILM</button>
+    <nav>
+      <button id="grid-toggle" class="mode-toggle" type="button">Grid</button>
+      <button id="contact-btn" class="contact-btn" type="button">Contact</button>
+    </nav>
+  </header>
+
+  <!-- ===== HOME PAGE ===== -->
+  <main>
+    <!-- Moving line of videos -->
+    <div id="line-wrapper" class="line-wrapper">
+      <div id="video-line" class="video-line">
+        <!-- video items are injected by script.js -->
+      </div>
+    </div>
+
+    <!-- Grid mode (hidden until toggled) -->
+    <div id="grid-view" class="grid-view hidden">
+      <!-- grid items are injected by script.js -->
+    </div>
+
+    <a class="site-credit" href="https://instagram.com/shmel.design" target="_blank" rel="noopener">©2026 SHMEL.DESIGN</a>
+  </main>
+
+  <!-- ===== PROJECT PAGE (slides up from bottom) ===== -->
+  <div id="project-overlay" class="overlay" role="dialog" aria-modal="true" aria-label="Project">
+    <button class="close-btn" id="project-close" type="button">Close X</button>
+
+    <!-- text block: inset by margin + 1 column -->
+    <div class="project-text">
+      <h2 id="project-title"></h2>
+      <p id="project-credits"></p>
+    </div>
+
+    <!-- media block: inset by margin only (wider than the text) -->
+    <div class="project-media">
+      <div class="screens-wrap">
+        <div id="project-screens" class="screens-track"></div>
+      </div>
+
+      <div class="about-row">
+        <span class="about-label">About the project</span>
+        <div class="long-desc" id="project-long-description"></div>
+      </div>
+
+      <div class="player-wrap">
+        <iframe
+          id="project-player"
+          src=""
+          title="project video"
+          frameborder="0"
+          allow="autoplay; fullscreen; picture-in-picture"
+          allowfullscreen
+        ></iframe>
+      </div>
+    </div>
+
+    <p class="scroll-hint">Scroll to close</p>
+  </div>
+
+  <!-- ===== CONTACT PAGE (slides up from bottom, static — no scrolling) ===== -->
+  <div id="contact-overlay" class="overlay contact-overlay" role="dialog" aria-modal="true" aria-label="Contact">
+    <button class="close-btn" id="contact-close" type="button">Close X</button>
+
+    <div class="contact-content">
+      <h2>Get in touch</h2>
+      <div class="contact-links">
+        <a class="contact-link" href="mailto:shmelzfilm@gmail.com">shmelzfilm@gmail.com</a>
+        <a class="contact-link" href="https://vimeo.com/" target="_blank" rel="noopener">Vimeo ↗</a>
+        <a class="contact-link" href="https://instagram.com/" target="_blank" rel="noopener">Instagram ↗</a>
+      </div>
+    </div>
+
+    <div class="contact-location">Based in Vienna</div>
+  </div>
+
+  <!-- ===== BIO PAGE (slides up from bottom, static — no scrolling) ===== -->
+  <div id="bio-overlay" class="overlay bio-overlay" role="dialog" aria-modal="true" aria-label="About">
+    <button class="close-btn" id="bio-close" type="button">Close X</button>
+
+    <div class="bio-photo">
+      <img src="images/bio.jpg" alt="Fedor Shmelkin" />
+    </div>
+
+    <h2 class="bio-heading">Fedor Shmelkin</h2>
+
+    <div class="bio-text-block">
+      <p class="bio-description">
+        A longer paragraph about Fedya, his process, concept, or context. Replace this with your real text; it sits next to the video once you scroll past the screenshots. It is a fact that a reader will be distracted by the layout of a page.
+      </p>
+
+      <!-- one row per entry — copy a .bio-history-row block to add more -->
+      <div class="bio-history">
+        <div class="bio-history-row"><span>2017–2019</span><span>University XXX — program name</span></div>
+        <div class="bio-history-row"><span>2020–2022</span><span>University YYY — program name</span></div>
+        <div class="bio-history-row"><span>2023–now</span><span>University ZZZ — program name</span></div>
+      </div>
+    </div>
+
+    <p class="scroll-hint bio-hint">Scroll to close</p>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
